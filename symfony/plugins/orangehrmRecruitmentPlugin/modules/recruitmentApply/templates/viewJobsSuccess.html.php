@@ -68,7 +68,7 @@
 
                     <!-- Job item -->
                     <div class="col-xs-12">
-                      <a class="item-block" href="job-detail.html">
+                      <a class="item-block" href="<?php echo public_path('index.php/recruitmentApply/applyVacancy/id/' . $vacancy->getId(), true); ?>">
                         <header>
                           <div class="hgroup">
                             <h4><?php echo $vacancy->getName(); ?></h4>
