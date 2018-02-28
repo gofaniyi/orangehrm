@@ -72,11 +72,11 @@
                         <header>
                           <div class="hgroup">
                             <h4><?php echo $vacancy->getName(); ?></h4>
-                            <h5>Google</h5>
+                            <h5><?php echo __('Engineering Department'); ?></h5>
                           </div>
                           <div class="header-meta">
-                            <span class="location">Menlo park, CA</span>
-                            <span class="label label-success">Full-time</span>
+                            <span class="location"><?php echo __('Lagos, NG.'); ?></span>
+                            <span class="label label-success"><?php echo __('Full-time'); ?></span>
                           </div>
                         </header>
                       </a>
