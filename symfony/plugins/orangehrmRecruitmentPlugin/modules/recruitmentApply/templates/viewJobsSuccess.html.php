@@ -104,16 +104,17 @@
           </header>
 
           <?php if (count($jobCategories) != 0): ?>   
-
+            <div class="category-grid">
             <?php foreach ($jobCategories as $category): ?>
 
-              <div class="category-grid">
+              
                 <a href="#">
                   <i class="fa fa-tags"></i>
                   <h6><?php echo $category->getName(); ?></h6>
                 </a>
-              </div>
+              
             <?php endforeach; ?>
+            </div>
 
         <?php else: ?>
             <span class="noVacanciesMessage"><?php echo __('No popular categories'); ?></span>
