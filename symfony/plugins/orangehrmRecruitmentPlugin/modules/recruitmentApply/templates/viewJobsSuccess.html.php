@@ -30,8 +30,8 @@ function limitText($text, $limit) {
           <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
           <div class="logo-wrapper">
-            <a class="logo" href="<?php echo public_path('index.php/dashboard', true); ?>"><img src="<?php echo theme_path('assets/img/home.png')?>" alt="logo"></a>
-            <a class="logo-alt" href="<?php echo public_path('index.php/dashboard', true); ?>"><img src="<?php echo theme_path('assets/img/home.png')?>" alt="logo-alt"></a>
+            <a class="logo" href="<?php echo public_path('index.php/dashboard', true); ?>"><img src="<?php echo theme_path('assets/img/home_c.png')?>" alt="logo"></a>
+            <a class="logo-alt" href="<?php echo public_path('index.php/dashboard', true); ?>"><img src="<?php echo theme_path('assets/img/home_c.png')?>" alt="logo-alt"></a>
           </div>
 
         </div>
