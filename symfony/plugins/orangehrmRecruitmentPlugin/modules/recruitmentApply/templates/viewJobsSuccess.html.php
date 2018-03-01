@@ -80,9 +80,9 @@ function limitText($text, $limit) {
                     <div class="col-xs-12">
                       <a class="item-block" target="_blank" href="<?php echo public_path('index.php/recruitmentApply/applyVacancy/id/' . $vacancy->getId(), true); ?>">
                         <header>
-                          <div class="hgroup">
+                          <div class="hgroup" style="width:90%">
                             <h4><?php echo $vacancy->getName(); ?></h4>
-                            <h5><?php echo limitText($vacancy->getDescription(), 250); ?></h5>
+                            <h5><?php echo limitText($vacancy->getDescription(), 35); ?></h5>
                           </div>
                           <div class="header-meta">
                             <span class="location"><?php echo __('Lagos, NG.'); ?></span>
