@@ -47,8 +47,8 @@ function limitText($text, $limit) {
       <div class="container">
         <div class="col-xs-12">
           <br><br>
-          <h2><?php echo __('We have'); ?> <mark><?php echo count($publishedVacancies); ?></mark> <?php echo __('job vacancies right now!'); ?></h2>
-          <h5 class="font-alt"><?php echo __('We envision a future in which talented employees from around the world collaborate across borders to advance human potential and we want you to help make it happen'); ?></h5>
+          <h2><?php echo __('We offer'); ?> <mark><?php echo count($publishedVacancies); ?></mark> <?php echo __('job vacancies right now!'); ?></h2>
+          <h5 class="font-alt"><?php echo __('Find your desire one in a minute '); ?></h5>
           <br><br><br>
         </div>
 
@@ -78,7 +78,7 @@ function limitText($text, $limit) {
 
                     <!-- Job item -->
                     <div class="col-xs-12">
-                      <a class="item-block" target="_blank" href="<?php echo public_path('index.php/recruitmentApply/applyVacancy/id/' . $vacancy->getId(), true); ?>">
+                      <a class="item-block" title="Click to apply" target="_blank" href="<?php echo public_path('index.php/recruitmentApply/applyVacancy/id/' . $vacancy->getId(), true); ?>">
                         <header>
                           <div class="hgroup" style="width:90%">
                             <h4><?php echo $vacancy->getName(); ?></h4>
@@ -103,6 +103,36 @@ function limitText($text, $limit) {
         </div>
       </section>
       <!-- END Recent jobs -->
+
+
+      <!-- Categories -->
+      <section class="bg-alt">
+        <div class="container">
+          <header class="section-header">
+            <span><?php echo __('Categories'); ?></span>
+            <h2><?php echo __('Popular categories'); ?></h2>
+          </header>
+
+          <?php if (count($jobCategories) != 0): ?>   
+            <div class="category-grid">
+            <?php foreach ($jobCategories as $category): ?>
+
+              
+                <a href="#">
+                  <i class="fa fa-tags"></i>
+                  <h6><?php echo $category->getName(); ?></h6>
+                </a>
+              
+            <?php endforeach; ?>
+            </div>
+
+        <?php else: ?>
+            <span class="noVacanciesMessage"><?php echo __('No popular categories'); ?></span>
+        <?php endif; ?>
+
+        </div>
+      </section>
+      <!-- END Categories -->
 
 
       <!-- Newsletter -->
