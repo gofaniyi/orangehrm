@@ -47,7 +47,7 @@ function limitText($text, $limit) {
       <div class="container">
         <div class="col-xs-12">
           <br><br>
-          <h2><?php echo __('We offer'); ?> <mark><?php echo count($publishedVacancies); ?></mark> <?php echo __('job vacancies right now!'); ?></h2>
+          <h2><?php echo __('We have'); ?> <mark><?php echo count($publishedVacancies); ?></mark> <?php echo __('job vacancies right now!'); ?></h2>
           <h5 class="font-alt"><?php echo __('Find your desire one in a minute '); ?></h5>
           <br><br><br>
         </div>
