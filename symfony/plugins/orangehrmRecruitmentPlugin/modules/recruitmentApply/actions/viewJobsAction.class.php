@@ -52,7 +52,7 @@ class viewJobsAction extends sfAction {
     public function execute($request) {
            
         $this->publishedVacancies = $this->getVacancyService()->getPublishedVacancies();
-        // $this->jobCategories = $this->getJobCategoryService()->getJobCategoryList();
+        $this->jobCategories = $this->getJobCategoryService()->getJobCategoryList();
 
         $response = $this->getResponse();
         

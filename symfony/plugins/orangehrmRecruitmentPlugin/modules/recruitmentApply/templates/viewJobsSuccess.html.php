@@ -72,7 +72,7 @@
                         <header>
                           <div class="hgroup">
                             <h4><?php echo $vacancy->getName(); ?></h4>
-                            <h5><?php echo __('Full-time'); ?></h5>
+                            <h5><?php echo getShortDescription($vacancy->getDescription(), 250, "..."); ?></h5>
                           </div>
                           <div class="header-meta">
                             <span class="location"><?php echo __('Lagos, NG.'); ?></span>
