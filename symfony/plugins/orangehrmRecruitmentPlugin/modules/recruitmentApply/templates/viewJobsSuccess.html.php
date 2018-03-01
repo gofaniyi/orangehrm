@@ -98,54 +98,33 @@
       <!-- END Recent jobs -->
 
 
-      <!-- Facts -->
-      <section class="bg-img bg-repeat no-overlay section-sm" style="background-image: url(<?php echo theme_path('assets/img/bg-pattern.png')?>)">
-        <div class="container">
-
-          <div class="row">
-            <div class="counter col-md-3 col-sm-6">
-              <p><span data-from="0" data-to="6890"></span>+</p>
-              <h6>Jobs</h6>
-            </div>
-
-            <div class="counter col-md-3 col-sm-6">
-              <p><span data-from="0" data-to="1200"></span>+</p>
-              <h6>Members</h6>
-            </div>
-
-            <div class="counter col-md-3 col-sm-6">
-              <p><span data-from="0" data-to="36800"></span>+</p>
-              <h6>Resume</h6>
-            </div>
-
-            <div class="counter col-md-3 col-sm-6">
-              <p><span data-from="0" data-to="15400"></span>+</p>
-              <h6>Company</h6>
-            </div>
-          </div>
-
-        </div>
-      </section>
-      <!-- END Facts -->
-
-
       <!-- Categories -->
       <section class="bg-alt">
         <div class="container">
           <header class="section-header">
-            <span>Categories</span>
+            <span><?php echo __('Categories'); ?></span>
             <h2>Popular categories</h2>
             <p>Here's the most popular categories</p>
           </header>
 
-          <div class="category-grid">
-            <a href="job-list-1.html">
-              <i class="fa fa-laptop"></i>
-              <h6>Technology</h6>
-              <p>Designer, Developer, IT Service, Front-end developer, Project management</p>
-            </a>
+          <?php if (count($jobCategories) != 0): ?>   
 
-            <a href="job-list-2.html">
+            <?php foreach ($jobCategories as $category): ?>
+
+              <div class="category-grid">
+                <a href="#">
+                  <i class="fa fa-laptop"></i>
+                  <h6><?php echo $category->getName(); ?></h6>
+                </a>
+              </div>
+            <?php endforeach; ?>
+
+        <?php else: ?>
+            <span class="noVacanciesMessage"><?php echo __('No popular categories'); ?></span>
+        <?php endif; ?>
+
+
+           <!--  <a href="job-list-2.html">
               <i class="fa fa-line-chart"></i>
               <h6>Accounting</h6>
               <p>Finance, Tax service, Payroll manager, Book keeper, Human resource</p>
@@ -174,7 +153,7 @@
               <h6>Government</h6>
               <p>Federal, Law, Human resource, Manager, Biologist</p>
             </a> 
-          </div>
+          </div> -->
 
         </div>
       </section>
@@ -211,29 +190,33 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">An employment website is a web site that deals specifically with employment or careers. Many employment websites are designed to allow employers to post job requirements for a position to be filled and are commonly known as job boards. Other employment sites offer employer reviews, career and job-search advice, and describe different job descriptions or employers. Through a job website a prospective employee can locate and fill out a job application.</p>
+            <h6><?php echo __('About Page'); ?></h6>
+            <p class="text-justify"><?php echo __('This page was built as an enhancement to OrangeHRM Opensource Project'); ?></p>
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Company</h6>
+            <h6><?php echo __('Quick Links'); ?></h6>
             <ul class="footer-links">
-              <li><a href="page-about.html">About us</a></li>
-              <li><a href="page-typography.html">How it works</a></li>
-              <li><a href="page-faq.html">Help center</a></li>
-              <li><a href="page-typography.html">Privacy policy</a></li>
-              <li><a href="page-contact.html">Contact us</a></li>
+              <li><a href="<?php echo public_path('index.php/dashboard', true); ?>"><?php echo __('Dashboard'); ?></a></li>
+              <li><a href="<?php echo public_path('index.php/directory/viewDirectory/reset/1', true); ?>"><?php echo __('Directory'); ?></a></li>
+              <li><a href="<?php echo public_path('index.php/performance/viewEmployeePerformanceTrackerList', true); ?>"><?php echo __('Employee Tracker'); ?></a></li>
+              <li><a href="<?php echo public_path('index.php/core/viewDefinedPredefinedReports/reportGroup/3/reportType/PIM_DEFINED', true); ?>"><?php echo __('Reports'); ?></a></li>
+              <li><a href="<?php echo public_path('index.php/admin/viewSystemUsers', true); ?>"><?php echo __('Admin'); ?></a></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Trendeing jobs</h6>
+            <h6><?php echo __('Trending jobs'); ?></h6>
             <ul class="footer-links">
-              <li><a href="job-list.html">Front-end developer</a></li>
-              <li><a href="job-list.html">Android developer</a></li>
-              <li><a href="job-list.html">iOS developer</a></li>
-              <li><a href="job-list.html">Full stack developer</a></li>
-              <li><a href="job-list.html">Project administrator</a></li>
+
+            <?php if (count($publishedVacancies) != 0): ?>   
+
+                <?php foreach ($publishedVacancies as $vacancy): ?>
+                    <li><a target="_blank" href="<?php echo public_path('index.php/recruitmentApply/applyVacancy/id/' . $vacancy->getId(), true); ?>"><?php echo $vacancy->getName(); ?></a></li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li><?php echo __('No trending jobs'); ?></li>
+            <?php endif; ?>
             </ul>
           </div>
         </div>
@@ -246,7 +229,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a href="http://themeforest.net/user/shamsoft">ShaMSofT</a>.</p>
+            <p class="copyright-text"><?php echo __('Copyrights'); ?> &copy; <?php echo __('2018 All Rights Reserved'); ?>
+                <a target="_blank" href="www.linkedin.com/in/gofaniyi"><?php echo __('Olaoluwa Faniyi'); ?></a>.</p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
