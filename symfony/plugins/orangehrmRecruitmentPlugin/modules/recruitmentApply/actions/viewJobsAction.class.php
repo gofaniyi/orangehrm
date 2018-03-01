@@ -34,13 +34,6 @@ class viewJobsAction extends sfAction {
         return $this->vacancyService;
     }
 
-    public function getJobCategoryService() {
-        if (is_null($this->jobCategoryService)) {
-            $this->jobCategoryService = new JobCategoryService();
-        }
-        return $this->jobCategoryService;
-    }
-
 
     
     /**
@@ -52,7 +45,6 @@ class viewJobsAction extends sfAction {
     public function execute($request) {
            
         $this->publishedVacancies = $this->getVacancyService()->getPublishedVacancies();
-        $this->jobCategories = $this->getJobCategoryService()->getJobCategoryList();
 
         $response = $this->getResponse();
         

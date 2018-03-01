@@ -105,36 +105,6 @@ function limitText($text, $limit) {
       <!-- END Recent jobs -->
 
 
-      <!-- Categories -->
-      <section class="bg-alt">
-        <div class="container">
-          <header class="section-header">
-            <span><?php echo __('Categories'); ?></span>
-            <h2><?php echo __('Popular categories'); ?></h2>
-          </header>
-
-          <?php if (count($jobCategories) != 0): ?>   
-            <div class="category-grid">
-            <?php foreach ($jobCategories as $category): ?>
-
-              
-                <a href="#">
-                  <i class="fa fa-tags"></i>
-                  <h6><?php echo $category->getName(); ?></h6>
-                </a>
-              
-            <?php endforeach; ?>
-            </div>
-
-        <?php else: ?>
-            <span class="noVacanciesMessage"><?php echo __('No popular categories'); ?></span>
-        <?php endif; ?>
-
-        </div>
-      </section>
-      <!-- END Categories -->
-
-
       <!-- Newsletter -->
       <section class="bg-img text-center" style="background-image: url(<?php echo theme_path('assets/img/bg-facts.jpg')?>)">
         <div class="container">
