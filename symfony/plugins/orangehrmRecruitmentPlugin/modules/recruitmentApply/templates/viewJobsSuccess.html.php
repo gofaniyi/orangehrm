@@ -1,4 +1,14 @@
 <?php use_javascript(plugin_web_path('orangehrmRecruitmentPlugin', 'js/viewJobsSuccess')); ?>
+<?php
+function limitText($text, $limit) {
+      if (str_word_count($text, 0) > $limit) {
+          $words = str_word_count($text, 2);
+          $pos = array_keys($words);
+          $text = substr($text, 0, $pos[$limit]) . '...';
+      }
+      return $text;
+    } 
+?>
 
     
     <link href="<?php echo theme_path('assets/css/app.min.css')?>" rel="stylesheet" type="text/css"/>
@@ -72,7 +82,7 @@
                         <header>
                           <div class="hgroup">
                             <h4><?php echo $vacancy->getName(); ?></h4>
-                            <h5><?php echo getShortDescription($vacancy->getDescription(), 250, "..."); ?></h5>
+                            <h5><?php echo limitText($vacancy->getDescription(), 250); ?></h5>
                           </div>
                           <div class="header-meta">
                             <span class="location"><?php echo __('Lagos, NG.'); ?></span>
