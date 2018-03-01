@@ -87,9 +87,6 @@
 
           </div>
 
-          <br><br>
-          <p class="text-center"><a class="btn btn-info" href="job-list.html">Browse all jobs</a></p>
-
           <?php else: ?>
                 <span class="noVacanciesMessage"><?php echo __('No active job vacancies to display'); ?></span>
             <?php endif; ?>
@@ -103,8 +100,7 @@
         <div class="container">
           <header class="section-header">
             <span><?php echo __('Categories'); ?></span>
-            <h2>Popular categories</h2>
-            <p>Here's the most popular categories</p>
+            <h2><?php echo __('Popular categories'); ?></h2>
           </header>
 
           <?php if (count($jobCategories) != 0): ?>   
@@ -113,7 +109,7 @@
 
               <div class="category-grid">
                 <a href="#">
-                  <i class="fa fa-laptop"></i>
+                  <i class="fa fa-tags"></i>
                   <h6><?php echo $category->getName(); ?></h6>
                 </a>
               </div>
@@ -123,57 +119,17 @@
             <span class="noVacanciesMessage"><?php echo __('No popular categories'); ?></span>
         <?php endif; ?>
 
-
-           <!--  <a href="job-list-2.html">
-              <i class="fa fa-line-chart"></i>
-              <h6>Accounting</h6>
-              <p>Finance, Tax service, Payroll manager, Book keeper, Human resource</p>
-            </a>
-
-            <a href="job-list-3.html">
-              <i class="fa fa-medkit"></i>
-              <h6>Medical</h6>
-              <p>Doctor, Nurse, Hospotal, Dental service, Massagist</p>
-            </a>
-
-            <a href="job-list-1.html">
-              <i class="fa fa-cutlery"></i>
-              <h6>Food</h6>
-              <p>Restaurant, Food service, Coffe shop, Cashier, Waitress</p>
-            </a>
-
-            <a href="job-list-2.html">
-              <i class="fa fa-newspaper-o"></i>
-              <h6>Media</h6>
-              <p>Journalism, Newspaper, Reporter, Writer, Cameraman</p>
-            </a>
-
-            <a href="job-list-3.html">
-              <i class="fa fa-institution"></i>
-              <h6>Government</h6>
-              <p>Federal, Law, Human resource, Manager, Biologist</p>
-            </a> 
-          </div> -->
-
         </div>
       </section>
       <!-- END Categories -->
 
 
       <!-- Newsletter -->
-      <section class="bg-img text-center" style="background-image: url(assets/img/bg-facts.jpg)">
+      <section class="bg-img text-center" style="background-image: url(<?php echo theme_path('assets/img/bg-facts.jpg')?>)">
         <div class="container">
-          <h2><strong>Subscribe</strong></h2>
-          <h6 class="font-alt">Get weekly top new jobs delivered to your inbox</h6>
-          <br><br>
-          <form class="form-subscribe" action="#">
-            <div class="input-group">
-              <input type="text" class="form-control input-lg" placeholder="Your eamil address">
-              <span class="input-group-btn">
-                <button class="btn btn-success btn-lg" type="submit">Subscribe</button>
-              </span>
-            </div>
-          </form>
+          <h2><strong><?php echo __('Join Our Team'); ?></strong></h2>
+          <p><?php echo __('Together, we are building a team of experts to impact the world for far longer than we will be here to witness. To do that, we must live our values and use them to guide our actions.
+Our company is a movement. Our company is a collection of brilliant minds across Africa. Our company is a platform for tech-enabled growth around the world. Our company is a commitment that while the digital revolution may have begun in Nigeria, its future will be written in Lagos, and every cities across Africa.'); ?></p>
         </div>
       </section>
       <!-- END Newsletter -->
