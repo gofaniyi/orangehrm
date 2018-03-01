@@ -1,4 +1,4 @@
-
+<?php use_javascript(plugin_web_path('orangehrmRecruitmentPlugin', 'js/viewJobsSuccess')); ?>
 
     
     <link href="<?php echo theme_path('assets/css/app.min.css')?>" rel="stylesheet" type="text/css"/>
